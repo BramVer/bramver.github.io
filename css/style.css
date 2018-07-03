@@ -169,6 +169,8 @@ section#profile #description {
 
 #flexboi div#paypal {
   width: 20%;
+  font-size: 1.5em;
+  font-family: Baskerville, Georgia;
   background: #fbfbfb;
   text-align: center;
   padding: 15px;
