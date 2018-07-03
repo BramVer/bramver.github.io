@@ -7,6 +7,13 @@ $(document).ready(function() {
 	$('#datetime').text(dateFormat);
 });
 
+$('div#paypal button#paypal-button').click(function(e) {
+	var url = 'https://paypal.me/dirkiedik';
+
+	var win = window.open(url, '_blank');
+	win.focus();
+});
+
 function clock(){
 
 	//Save the times in variables

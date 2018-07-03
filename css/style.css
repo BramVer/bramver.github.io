@@ -160,3 +160,17 @@ section#profile #description {
   font-family: Baskerville, Georgia;
   color: #fbfbfb;
 }
+
+#flexboi {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+#flexboi div#paypal {
+  width: 20%;
+  background: #fbfbfb;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px 6px 0 0;
+}
