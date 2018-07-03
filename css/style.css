@@ -125,18 +125,32 @@ section#timeline article:nth-child(5) div.inner h2:after {
   background: #9b59b6;
 }
 
+section#timeline article div.inner h2.complete a {
+  text-decoration: none;
+  color: #fff;
+}
+section#timeline article div.inner h2.incomplete a {
+  text-decoration: none;
+  color: #fff;
+}
 section#timeline article div.inner h2.complete {
   background: #2ecc71 !important;
 }
 section#timeline article div.inner h2.complete:after {
   background: #2ecc71 !important;
+  text-decoration: none;
+  color: #e8e958;
 }
 
 section#timeline article div.inner h2.incomplete {
   background: #e74c3c !important;
+  text-decoration: none;
+  color: #e8e958;
 }
 section#timeline article div.inner h2.incomplete:after {
   background: #e74c3c !important;
+  text-decoration: none;
+  color: #e8e958;
 }
 
 section#profile {
