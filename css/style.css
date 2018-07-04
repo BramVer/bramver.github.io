@@ -141,7 +141,11 @@ section#timeline article div.inner h2.complete:after {
   text-decoration: none;
   color: #e8e958;
 }
-
+section#timeline article div.inner h2 a.mail-to-me {
+  background: #2ecc71 !important;
+  font-size: 0.8em;
+  color: yellow;
+}
 section#timeline article div.inner h2.incomplete {
   background: #e74c3c !important;
   text-decoration: none;
