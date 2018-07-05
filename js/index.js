@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 $('div#paypal button#paypal-button').click(function(e) {
-	var url = 'https://paypal.me/dirkiedik';
+	var url = 'https://paypal.me/dirkiedik/6.9';
 
 	var win = window.open(url, '_blank');
 	win.focus();
