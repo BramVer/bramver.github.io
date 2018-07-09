@@ -19,6 +19,10 @@ function clock(){
 	//Save the times in variables
 	var today = new Date();
 
+	var date = today.getDate();
+	var month = today.getMonth() + 1;
+	var year = today.getFullYear();
+
 	var hours = today.getHours();
 	var minutes = today.getMinutes();
 	var seconds = today.getSeconds();
@@ -56,7 +60,11 @@ function clock(){
 		seconds = seconds;
 	}
 
-	document.getElementById("clock").innerHTML = (hours + ":" + minutes + ":" + seconds + meridiem);
+	var dateFormat = `${date}/${month}/${year}`;
+	var hourFormat = `${hours}:${minutes}:${seconds} ${meridiem}`;
+
+	$("#clock #date").html(dateFormat);
+	$("#clock #time").html(hourFormat);
 }
 
 setInterval('clock()', 1000);
