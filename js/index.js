@@ -7,6 +7,8 @@ $(document).ready(function() {
 	$('#datetime').text(dateFormat);
 });
 
+$('a.mail-to-me').attr('href', 'mailto:bramvereertbrugghen@live.be');
+$('article.keyboard a.description').attr('target', '_blank');
 $('div#paypal button#paypal-button').click(function(e) {
 	var url = 'https://paypal.me/dirkiedik/6.9';
 
