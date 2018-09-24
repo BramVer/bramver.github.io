@@ -76,17 +76,19 @@ section#timeline article div.inner h2:after {
     height: 10px;
   -webkit-transform: rotate(-45deg);
 }
-section#timeline article div.inner p {
+#timeline .keyboard .specs {
   padding: 15px;
   margin: 0;
   font-size: 14px;
   background: #fff;
   color: #656565;
 }
-section#timeline article p.acquisition-date {
-  font-size: 0.8em;
+#timeline .keyboard .specs .acquisition-date {
+  font-size: 1.2em;
   color: gray;
-  padding-bottom: 0px;
+  margin: 0;
+  padding: 10px 0 0 0; 
+  text-align: center;
 }
 section#timeline article:nth-child(2n+2) div.inner {
   float: right;
