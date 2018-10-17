@@ -78,17 +78,23 @@ section#timeline article div.inner h2:after {
 }
 #timeline .keyboard .specs {
   padding: 15px;
+  padding-top: 5px;
   margin: 0;
   font-size: 14px;
   background: #fff;
   color: #656565;
 }
-#timeline .keyboard .specs .acquisition-date {
+/*#timeline .keyboard .specs .acquisition-date {
   font-size: 1.2em;
   color: gray;
   margin: 0;
   padding: 10px 0 0 0; 
   text-align: center;
+}
+*/#timeline .keyboard .specs .profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
 }
 section#timeline article:nth-child(2n+2) div.inner {
   float: right;
