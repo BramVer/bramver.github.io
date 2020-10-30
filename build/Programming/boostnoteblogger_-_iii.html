@@ -100,16 +100,47 @@
             <!-- Content -->
             <div class="blog">
                 <div>
-<h1>Index</h1>
-<h2>So what is this?</h2>
-<p>This is a small project, hacked together by me, Bram, to try and automate managing a blog, <em>without actually having to touch all these stupid tools.</em><br>
-It's generated through a small module called <code>bnb</code> which you can find on pypi and on my github page.  </p>
-<h2>Enjoy! xoxo</h2>
-<h6>Check me op de socials</h6>
+<h1>BoostNoteBlogger - III</h1>
+<p>Where did we manage to go and what is still on our roadmap?
+Where were our main issues and what went surprisingly easy?</p>
+<h2>What did we manage to do?</h2>
+<p>Although we planned for a lot of things, this is what we have achieved in the X days of development.  </p>
 <ul>
-<li><a href="https://github.com/BramVer/">BramVer (Bramver) · GitHub</a> </li>
-<li><a href="https://gitlab.com/BramVer">Bramver · GitLab</a></li>
-</ul>        </div>
+<li>[x] Extract content from our notes and convert into markdown / metadata</li>
+<li>[x] Convert metadata in easy to access information</li>
+<li>[x] Write biggest part of it in a test-first approach</li>
+<li>[x] Create a decent-enough html template</li>
+<li>[x] Wrap our content in html</li>
+<li>[x] Have a very dynamic configurationsystem</li>
+</ul>
+<h2>What did we plan for but didn't manage to do in time</h2>
+<ul>
+<li>[ ] Proper multiple-times cleanup</li>
+<li>[ ] Proper testing not only for 100% coverage, but for 100% usecase</li>
+<li>[ ] Configuration wizard that inits what we still need</li>
+</ul>
+<h2>What is our roadmap</h2>
+<ul>
+<li>[ ] Attachments</li>
+<li>[ ] Optimize this GH Actions thing -&gt; Properly set the index.html etc.</li>
+<li>[ ] Add mor flags with sane options</li>
+<li>[ ] Move configuration from pure env-vars defined in code to a config file with default in <code>.config/bnb</code></li>
+<li>[ ] Fulltyping with mypy hooks</li>
+<li>[ ] Proper README with a full wiki</li>
+<li>[ ] Integration within BoostNote itself?</li>
+</ul>
+<h2>Biggest issues</h2>
+<h3>Github Actions</h3>
+<p>I'm somewhat familiar with Jenkins, Travis CI and Gitlab CI.<br>
+Used Docker before and made my own docker-compose files.  </p>
+<p>But that thing... it scares me.😰😰😰</p>
+<h4>1. Un (or over) -welcome Actions page</h4>
+<p>It's filled with all kinds of random actions templates you can use, depending on what you need.<br>
+But of course every reload shows different results, and it's never quite the one you need.<br>
+Then there's knowing whether you want the know if the action is 1. to deploy somewhere, 2. just a continuous workflow or 3. something to automate every step in your process.  </p>
+<p><strong><em>HMMMMMMMMM</em></strong></p>
+<p>Turned out not to be difficult <strong>at all</strong>, you just need to get going and say <em>"fuck all of this Imma do it myself!"</em> and start a workflow from scratch.<br>
+Unbelievable how long it took to make sense, even with someone else who's used this before trying to work with me to get it setup but him also getting lost.</p>        </div>
     </div>
 </div>
 <div id="side-bar" class="colored col-md-3">
