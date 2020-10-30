@@ -1,0 +1,172 @@
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                padding: 0;
+                background-color: rgb(28, 28, 28);
+            }
+
+            #topnav {
+                background-color: #303691;
+                color: antiquewhite;
+                margin: 0;
+                padding: 2rem 1rem;
+            }
+
+            #bottomnav {
+                background-color: #373737;
+                color: antiquewhite;
+                margin-bottom: 0px;
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 60px;
+                padding: 20px;
+            }
+
+            #bottomnav .container {
+                display: flex;
+                justify-content: center;
+            }
+
+            .jumbo-header {
+                display: flex;
+                justify-content: center;
+            }
+
+            #content-wrapper {
+                padding: 30px;
+                display: flex;
+            }
+
+            #headnote {
+                display: flex;
+                justify-content: center;
+                font-style: italic;
+                font-size: 18px;
+                color: #ABABAB;
+            }
+            #side-bar {
+                margin-right: 30px;
+            }
+            #side-bar p {
+                font-size: 20px;
+            }
+            #side-bar strong {
+                font-size: 13px;
+                margin-left: 15px;
+                background-color: coral;
+                border-radius: 3px;
+                padding: 3px;
+            }
+
+            .colored {
+                background-color: lightgray;
+                border-radius: 20px;
+                padding: 30px;
+            }
+
+            .content {
+                flex-grow: 1;
+            }
+
+        </style>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/monokai-sublime.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+
+    <div id="topnav" class="jumbotron">
+      <div class="container">
+        <h1 class="jumbo-header">🅱️ram's leuke blog</h1>
+        <p id="headnote">Ludieke weetjes 👉😎👉</p>
+      </div>
+    </div>
+
+    <div id="content-wrapper">
+        <div class="content container colored col-md-7">
+            <!-- Content -->
+            <div class="blog">
+                <div>
+<h1>BoostNoteBlogger - I</h1>
+<p>So this is the first entry in, hopefully, a lot more of these posts where I use myself as 🦆 the rubber ducky 🦆. </p>
+<h2>Soooo, what are ya tryin' to achieve there, buddy?</h2>
+<p>I've always wanted to set up a blog and post periodically, but none of the options out there really spoke to me.<br>
+It's either oversimplified that I cannot use and interface I like, or overcomplicated with too many options where setting everything up/writing takes up more of time than just writing.<br>
+What I need is just something I can plug into my current workflow, because <em>I don't like change</em>.</p>
+<h3>Okay sure but what's your workflow then?</h3>
+<p>Markdown fits my purpose. It's easy to write, relatively easy to keep clean and it's integrated in most services.<br>
+From all editors I've tried, BoostNote is the one that always works best imo.<br>
+Configurable enough so that I can setup multiple storages, and simple enough that I don't need to think about everything and can just jump into writing.</p>
+<h2>The main flow</h2>
+<p>There are 5 base things that we need to think about in this context;
+<strong>How do we</strong>
+1. create the content?
+2. recognize notes as blogging entries?
+3. generate HTML from these MD files with extra logic?
+4. publish?
+5. interact with everything?</p>
+<h3>1. Creating the content</h3>
+<p>We'll use BoostNote for this.
+<em>Note: We're </em><em>not</em><em> using the newer BoostNoteNext, since this works fine for our case.</em></p>
+<h3>2. Structure and manage entries for our blog</h3>
+<p>We'll most likely need a centralized <code>index.md</code> file to fallback on, linking all entries together.<br>
+For now we've setup a new <strong>storage location</strong> just for the blog, and added <strong>a folder per topic</strong>.
+This way of working I believe we can easily categorize entries,
+but if we want to link the relevant parts of a series, we can use <strong>tags</strong>.</p>
+<p>All of this information can be extracted from the metadata stored in the files.</p>
+<p>For now I believe this is the easiest approach.</p>
+<pre><code class="language-python">~/dev/blog
+        -&gt; Default
+            -&gt; index.md
+        -&gt; Programming
+            -&gt; BoostNoteBlogger - I
+            -&gt; BoostNoteBlogger - II
+            -&gt; CsonToMarkdown - I
+            -&gt; BoostNoteBlogger - III
+        -&gt; Music
+        -&gt; Other
+</code></pre>
+<h3>3. Generating HTML and injecting custom logic</h3>
+<p>This heavily depends on which library we use to parse (and if we decide to write our own of course).<br>
+<a href="https://python-markdown.github.io/">Python-Markdown</a> seems like a good choice, especially due to their <em>Extension API</em>,
+but I haven't looked into it, so everything's open to change.</p>
+<h3>4. Publishing HTML</h3>
+<p>GH-pages seems like the easiest (and free-est) way to go, but how do we get there?<br>
+My first thought was to use my other <code>cson-to-markdown</code> tool as a post-commit hook again, everytime I update the notes folder and commit the changes,<br>
+but that was immediatly dismissed, since that means we'd generate HTML locally. <strong>We don't want to track it locally.</strong><br>
+Some birdie whispered to me that GH actions can achieve the behaviour we want, I'm interested to see if we can get the same with Gitlab as well,<br>
+but since we're most likely going to use GH Pages, actions make the most sense.</p>
+<p>We'll have a pipeline that triggers the HTML generation from the Markdown in the repo, so we're not keeping double files.  </p>
+<h3>5. Interfacing</h3>
+<p>I've always been a sucker for <em>cool and flashy ncurses-like interfaces</em>, but I want to get out of the way as much as possible.<br>
+The library <strong>questionary</strong> seems like a good place to start with a set-up.<br>
+The more options the application can offer the user by <strong>pure, sane defaults</strong>, the better.<br>
+Noone wants to enter a path each time they use the same application, you want to get/set a sort of profile and store settings for reuse.</p>        </div>
+    </div>
+</div>
+<div id="side-bar" class="colored col-md-3">
+<h2>October 2020<p><a href="https://bramver.github.io/Default/index.html">Index</a></p></h2>
+<pre><code>* &lt;p&gt;&lt;a href="https://bramver.github.io/Programming/boostnoteblogger_-_ii.html"&gt;BoostNoteBlogger - II&lt;/a&gt;&lt;strong&gt;BNB-development&lt;/strong&gt;&lt;/p&gt;
+</code></pre>
+<h2>June 2020<p><a href="https://bramver.github.io/Programming/boostnoteblogger_-_i.html">BoostNoteBlogger - I</a></p></h2>
+                    </div>
+                </div>
+
+                  <footer id="bottomnav" class="jumbotron">
+                      <div class="container">
+                        <h5>Made with <a href="http://">BoostNoteBlogger</a> by Bram Vereertbrugghen - <a href="mailto:bram@adimian.com">bram@adimian.com</a></h5>
+                      </div>
+                  </footer>
+                </body>
+            </html>
