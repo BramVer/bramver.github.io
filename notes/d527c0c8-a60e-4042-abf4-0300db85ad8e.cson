@@ -1,5 +1,5 @@
 createdAt: "2020-10-30T09:27:45.640Z"
-updatedAt: "2020-10-30T09:53:40.093Z"
+updatedAt: "2020-10-30T14:31:25.924Z"
 type: "MARKDOWN_NOTE"
 folder: "940c49dbc921f7682cc2"
 title: "Index"
@@ -7,11 +7,11 @@ tags: []
 content: '''
   # Index
   
-  ## Wat is dit voor een gat??
-  Gegroet iedereen!  
-  Dit is mijn leuke blog vol met aangename en grappige plaatjes!
+  ## So what is this?
+  This is a small project, hacked together by me, Bram, to try and automate managing a blog, *without actually having to touch all these stupid tools.*  
+  It's generated through a small module called `bnb` which you can find on pypi and on my github page.  
   
-  ## Veel plezier xoxo
+  ## Enjoy! xoxo
   
   ###### Check me op de socials
   
