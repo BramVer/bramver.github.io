@@ -1,0 +1,79 @@
+createdAt: "2020-06-15T16:40:10.572Z"
+updatedAt: "2020-10-29T21:02:38.261Z"
+type: "MARKDOWN_NOTE"
+folder: "db61c3ab012bea8f6267"
+title: "BoostNoteBlogger - I"
+tags: []
+content: '''
+  # BoostNoteBlogger - I
+  So this is the first entry in, hopefully, a lot more of these posts where I use myself as 🦆 the rubber ducky 🦆. 
+  
+  ## Soooo, what are ya tryin' to achieve there, buddy?
+  I've always wanted to set up a blog and post periodically, but none of the options out there really spoke to me.  
+  It's either oversimplified that I cannot use and interface I like, or overcomplicated with too many options where setting everything up/writing takes up more of time than just writing.  
+  What I need is just something I can plug into my current workflow, because *I don't like change*.
+  
+  ### Okay sure but what's your workflow then?
+  Markdown fits my purpose. It's easy to write, relatively easy to keep clean and it's integrated in most services.  
+  From all editors I've tried, BoostNote is the one that always works best imo.  
+  Configurable enough so that I can setup multiple storages, and simple enough that I don't need to think about everything and can just jump into writing.
+  
+  ## The main flow 
+  There are 5 base things that we need to think about in this context;
+  **How do we**
+  1. create the content?
+  2. recognize notes as blogging entries?
+  3. generate HTML from these MD files with extra logic?
+  4. publish?
+  5. interact with everything?
+  
+  ### 1. Creating the content
+  We'll use BoostNote for this.
+  *Note: We're **not** using the newer BoostNoteNext, since this works fine for our case.*
+  
+  ### 2. Structure and manage entries for our blog
+  We'll most likely need a centralized `index.md` file to fallback on, linking all entries together.  
+  For now we've setup a new **storage location** just for the blog, and added **a folder per topic**.
+  This way of working I believe we can easily categorize entries,
+  but if we want to link the relevant parts of a series, we can use **tags**.
+  
+  All of this information can be extracted from the metadata stored in the files.
+  
+  For now I believe this is the easiest approach.
+  
+  ```python
+  ~/dev/blog
+          -> Default
+              -> index.md
+          -> Programming
+              -> BoostNoteBlogger - I
+              -> BoostNoteBlogger - II
+              -> CsonToMarkdown - I
+              -> BoostNoteBlogger - III
+          -> Music
+          -> Other
+  ```
+  
+  ### 3. Generating HTML and injecting custom logic
+  This heavily depends on which library we use to parse (and if we decide to write our own of course).  
+  [Python-Markdown](https://python-markdown.github.io/) seems like a good choice, especially due to their *Extension API*,
+  but I haven't looked into it, so everything's open to change.
+  
+  ### 4. Publishing HTML
+  GH-pages seems like the easiest (and free-est) way to go, but how do we get there?  
+  My first thought was to use my other `cson-to-markdown` tool as a post-commit hook again, everytime I update the notes folder and commit the changes,  
+  but that was immediatly dismissed, since that means we'd generate HTML locally. **We don't want to track it locally.**  
+  Some birdie whispered to me that GH actions can achieve the behaviour we want, I'm interested to see if we can get the same with Gitlab as well,  
+  but since we're most likely going to use GH Pages, actions make the most sense.
+  
+  We'll have a pipeline that triggers the HTML generation from the Markdown in the repo, so we're not keeping double files.  
+  
+  ### 5. Interfacing
+  I've always been a sucker for *cool and flashy ncurses-like interfaces*, but I want to get out of the way as much as possible.  
+  The library **questionary** seems like a good place to start with a set-up.  
+  The more options the application can offer the user by **pure, sane defaults**, the better.  
+  Noone wants to enter a path each time they use the same application, you want to get/set a sort of profile and store settings for reuse.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
