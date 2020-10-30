@@ -1,0 +1,23 @@
+createdAt: "2020-10-30T09:27:45.640Z"
+updatedAt: "2020-10-30T14:31:25.924Z"
+type: "MARKDOWN_NOTE"
+folder: "940c49dbc921f7682cc2"
+title: "Index"
+tags: []
+content: '''
+  # Index
+  
+  ## So what is this?
+  This is a small project, hacked together by me, Bram, to try and automate managing a blog, *without actually having to touch all these stupid tools.*  
+  It's generated through a small module called `bnb` which you can find on pypi and on my github page.  
+  
+  ## Enjoy! xoxo
+  
+  ###### Check me op de socials
+  
+  - [BramVer (Bramver) · GitHub](https://github.com/BramVer/) 
+  - [Bramver · GitLab](https://gitlab.com/BramVer)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
