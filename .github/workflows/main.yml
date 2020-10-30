@@ -17,10 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    steps:      
+      # Set up env
+      - name: Setup Python
+        uses: actions/setup-python@v2
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       # Setup pkg mgmt
       - name: Python Poetry Action
         uses: abatilo/actions-poetry@v2.1.0
