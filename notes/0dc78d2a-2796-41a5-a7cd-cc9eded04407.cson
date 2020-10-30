@@ -1,0 +1,56 @@
+createdAt: "2020-10-30T14:41:21.373Z"
+updatedAt: "2020-10-30T15:11:02.411Z"
+type: "MARKDOWN_NOTE"
+folder: "db61c3ab012bea8f6267"
+title: "BoostNoteBlogger - III"
+tags: []
+content: '''
+  # BoostNoteBlogger - III
+  Where did we manage to go and what is still on our roadmap?
+  Where were our main issues and what went surprisingly easy?
+  
+  ## What did we manage to do?
+  Although we planned for a lot of things, this is what we have achieved in the X days of development.  
+  
+  - [x] Extract content from our notes and convert into markdown / metadata
+  - [x] Convert metadata in easy to access information
+  - [x] Write biggest part of it in a test-first approach
+  - [x] Create a decent-enough html template
+  - [x] Wrap our content in html
+  - [x] Have a very dynamic configurationsystem
+  
+  ## What did we plan for but didn't manage to do in time
+  
+  - [ ] Proper multiple-times cleanup
+  - [ ] Proper testing not only for 100% coverage, but for 100% usecase
+  - [ ] Configuration wizard that inits what we still need
+  
+  ## What is our roadmap
+  - [ ] Attachments
+  - [ ] Optimize this GH Actions thing -> Properly set the index.html etc.
+  - [ ] Add mor flags with sane options
+  - [ ] Move configuration from pure env-vars defined in code to a config file with default in `.config/bnb`
+  - [ ] Fulltyping with mypy hooks
+  - [ ] Proper README with a full wiki
+  - [ ] Integration within BoostNote itself?
+  
+  ## Biggest issues
+  ### Github Actions
+  I'm somewhat familiar with Jenkins, Travis CI and Gitlab CI.  
+  Used Docker before and made my own docker-compose files.  
+  
+  But that thing... it scares me.😰😰😰
+  
+  #### 1. Un (or over) -welcome Actions page
+  It's filled with all kinds of random actions templates you can use, depending on what you need.  
+  But of course every reload shows different results, and it's never quite the one you need.  
+  Then there's knowing whether you want the know if the action is 1. to deploy somewhere, 2. just a continuous workflow or 3. something to automate every step in your process.  
+  
+  ***HMMMMMMMMM***
+  
+  Turned out not to be difficult **at all**, you just need to get going and say *"fuck all of this Imma do it myself!"* and start a workflow from scratch.  
+  Unbelievable how long it took to make sense, even with someone else who's used this before trying to work with me to get it setup but him also getting lost.
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
